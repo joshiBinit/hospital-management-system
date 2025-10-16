@@ -1,0 +1,59 @@
+<section
+  class="min-h-screen flex flex-col items-center justify-between text-center relative overflow-hidden bg-gradient-to-br from-brand-50 to-white"
+>
+  <div
+    class="absolute inset-0 bg-[url('/assets/medical-bg.svg')] bg-cover bg-center opacity-10"
+  ></div>
+
+  <div
+    class="relative z-10 flex flex-col items-center justify-center flex-1 px-6 py-10 sm:px-10"
+  >
+    <h1 class="text-4xl md:text-6xl font-bold text-brand-700 drop-shadow-sm">
+      Welcome to
+      <span class="text-brand-500">HealthEase</span>
+    </h1>
+
+    <p class="text-gray-600 text-lg md:text-xl mt-4 max-w-2xl">
+      Your smart hospital management portal — bringing patient care, scheduling,
+      and analytics under one compassionate roof.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+      <a
+        routerLink="/auth/signup"
+        mat-raised-button
+        color="primary"
+        class="!bg-brand-500 hover:!bg-brand-700 text-white px-10 py-3 rounded-full font-medium transition-all"
+      >
+        Create Account
+      </a>
+      <a
+        routerLink="/auth/login"
+        mat-raised-button
+        color="primary"
+        class="border-brand-500 text-brand-700 hover:bg-brand-50 px-10 py-3 rounded-full font-medium transition-all"
+      >
+        Login
+      </a>
+    </div>
+
+    <div class="mt-12 grid grid-cols-3 gap-6 sm:gap-10 text-center max-w-3xl">
+      <div class="space-y-2">
+        <mat-icon class="text-brand-500 text-4xl">assignment</mat-icon>
+        <p class="text-sm font-medium text-gray-700">Patient Management</p>
+      </div>
+      <div class="space-y-2">
+        <mat-icon class="text-brand-500 text-4xl">event_available</mat-icon>
+        <p class="text-sm font-medium text-gray-700">Appointments</p>
+      </div>
+      <div class="space-y-2">
+        <mat-icon class="text-brand-500 text-4xl">analytics</mat-icon>
+        <p class="text-sm font-medium text-gray-700">Analytics</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="relative z-10 w-full text-center py-4 text-sm text-gray-500">
+    © {{ currentYear }} HealthEase · Designed for efficient care
+  </footer>
+</section>

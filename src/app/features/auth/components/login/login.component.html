@@ -1,0 +1,42 @@
+<div
+  class="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-50 to-white px-4"
+>
+  <mat-card
+    class="w-full max-w-md shadow-xl rounded-2xl p-6 space-y-6 bg-white/80 backdrop-blur-md"
+  >
+    <h2 class="text-2xl font-bold text-center text-brand-700">Login</h2>
+    @if(form){
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+      <app-input-text
+        [control]="getControl('email')"
+        [label]="'Email'"
+        [placeholder]="'Enter email'"
+      ></app-input-text>
+
+      <app-input-text
+        [control]="getControl('password')"
+        [label]="'Password'"
+        [placeholder]="'••••••••'"
+        [type]="'password'"
+      ></app-input-text>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 sm:py-3"
+        type="submit"
+      >
+        Login
+      </button>
+
+      <div class="flex justify-between text-sm text-gray-600 mt-4">
+        <a routerLink="/auth/forgot-password" class="hover:underline"
+          >Forgot password?</a
+        >
+        <a routerLink="/auth/signup" class="hover:underline">Sign up</a>
+      </div>
+    </form>
+    }
+  </mat-card>
+</div>
