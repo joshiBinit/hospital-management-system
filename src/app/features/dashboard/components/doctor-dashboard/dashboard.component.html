@@ -1,0 +1,40 @@
+<section class="space-y-8">
+  <div>
+    <h2 class="text-2xl font-semibold text-gray-800 mb-1">
+      Good Morning, Doctor
+    </h2>
+    <p class="text-gray-500">Here's a quick summary of your day.</p>
+  </div>
+
+  <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      *ngFor="let stat of quickStats"
+      class="p-5 rounded-lg shadow-md text-white flex items-center space-x-4"
+      [ngClass]="stat.color"
+    >
+      <mat-icon class="text-3xl opacity-90">{{ stat.icon }}</mat-icon>
+      <div>
+        <div class="text-2xl font-bold leading-tight">{{ stat.value }}</div>
+        <div class="text-sm uppercase tracking-wide">{{ stat.label }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <h3 class="text-lg font-semibold mb-4 text-gray-800">
+      Today's Appointments
+    </h3>
+    <div class="divide-y divide-gray-200">
+      <div
+        *ngFor="let appt of appointmentsToday"
+        class="flex items-center justify-between py-3"
+      >
+        <div>
+          <div class="font-medium text-gray-800">{{ appt.patient }}</div>
+          <div class="text-sm text-gray-500">{{ appt.reason }}</div>
+        </div>
+        <span class="font-semibold text-indigo-600">{{ appt.time }}</span>
+      </div>
+    </div>
+  </div>
+</section>
